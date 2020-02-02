@@ -5,14 +5,14 @@ javascript: (function() {
     let host = url.hostname;
     if (host.indexOf("amazon") > 0) {
         matchStr = matchStr.split('/dp/')[1].match(/\w{10}/)[0];
-        paste = "amzn.com/" + matchStr;
+        paste = "https://amzn.com/" + matchStr;
     } else if (host.indexOf("ebay") > 0) {
         matchStr = matchStr.split('/');
         matchStr = matchStr[matchStr.length - 1];
-        paste = "ebay.com/itm/" + matchStr;
+        paste = "https://ebay.com/itm/" + matchStr;
     } else if (host.indexOf("reddit.com") > 0) {
         matchStr = matchStr.split('/comments/')[1].match(/\w{6}/)[0];
-        paste = "redd.it/" + matchStr;
+        paste = "https://redd.it/" + matchStr;
     }
     const ele = document.createElement('textarea');
     ele.value = paste;
