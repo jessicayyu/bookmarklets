@@ -2,12 +2,12 @@ javascript: (function() {
     let current = document.activeElement;
     let input;
     if (current.tagName !== "TEXTAREA") {
-        current = document.querySelector('.md textarea');
+        current = document.querySelector('.commentarea .md textarea');
         input = current.value;
     } else if (current.tagName === "TEXTAREA") {
         input = current.value;
     }
     let url = window.location.href;
     url = url.split('www').join('old');
-    current.value = input + "\n  \n|||\n|-|-|  \n| [](#P/H01/33/) | If you're browsing on the Reddit Redesign layout on your computer, try out [classic Reddit](" + url + ") to see custom subreddit styles, including pokeball sprites and Pokemon icons like the Eevee icon to the left!|";
+    current.value = input + "\n  \n|||\n|-|-|  \n| [](#P/H01/33/) | ^(If you're browsing on the Reddit Redesign layout on your computer, try out) [^(classic Reddit)](" + url + ") ^(to see custom subreddit styles, including pokeball sprites and Pokemon icons like the Eevee icon to the left!)|";
 }())
