@@ -7,5 +7,15 @@ javascript: (function() {
     date = new Date(date);
     date = date.toLocaleDateString('en-US', dateOptions);
     let output = `[${title}](${url}) - ${date}`;
-    document.querySelector('.commentarea .md textarea').value = output;
+    let target = document.querySelector('.commentarea .md textarea');
+    if (target) {
+        target.value = output;  
+    } else {
+        const ele = document.createElement('textarea');
+        ele.value = output;
+        document.body.appendChild(ele);
+        ele.select();
+        document.execCommand('copy');
+        document.body.removeChild(ele);
+    }
 }())
