@@ -4,7 +4,7 @@ javascript: (function() {
     let matchStr = url.pathname;
     let host = url.hostname;
     if (host.indexOf("amazon") > 0) {
-        matchStr = matchStr.split('/dp/')[1].match(/\w{10}/)[0];
+        matchStr = matchStr.match(/\b\w{10}\b/)[0];
         paste = "https://amzn.com/" + matchStr;
     } else if (host.indexOf("ebay") > 0) {
         matchStr = matchStr.split('/');
